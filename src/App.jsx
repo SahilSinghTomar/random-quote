@@ -19,7 +19,10 @@ function App() {
   };
 
   const saveQuoteToList = () => {
-    setSavedQuotes([...savedQuotes, quote]);
+    // add new quotes only if they are not already in the list
+    if (!savedQuotes.includes(quote)) {
+      setSavedQuotes([...savedQuotes, quote]);
+    }
   };
 
   return (
